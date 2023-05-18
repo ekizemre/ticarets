@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check2" GörüntüleBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" GörüntüleBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" GörüntüleBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" GörüntüleBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>Bilgi</h4>
+          <p class="text-body-secondary">Bu Web Sitesi İnternet ve Web Gelistirme Dersi için Özel Olarak Hazirlanmistir </p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>İçerikler</h4>
+          <ul class="list-unstyled">
+            <li><a href="https://www.linkedin.com/in/emre-ekiz-174451200/" class="text-white">Follow on Linkedin</a></li>
+            <li><a href="https://github.com/rewindyflakes" class="text-white">Follow on Github</a></li>
+            <li><a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser" class="text-white">Email me</a></li>
+            <li><a href="stok.html" class="text-white">Stoklarimiz</a></li>
+            
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div class="navbar navbar-dark bg-dark shadow-sm"> 
+    <div class="container">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" GörüntüleBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <strong>Emre Ekiz E-Ticaret</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        
+        <h1 class="fw-light">Ürünlerimiz</h1>
+        <p class="lead text-body-secondary">Fiyatlarimiza KDV dahildir.</p>
+        <p>
+          <a href="indirim.html" class="btn btn-primary my-2">İndirimli Ürünler</a>
+          
+        </p>
+      </div>
+    </div>
+  </section>
+  <style>
+		.product-box {
+			border: 5px solid #ccc;
+			padding: 15px;
+			width: 250px;
+			height: 400px;
+			margin: 10px;
+			float: left;
+		}
+		.product-image {
+			height: 155px;
+			width: 200px;
+			margin-bottom: 10px;
+		}
+		.product-name {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		.product-price {
+			color: green;
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+		.product-desc {
+			font-size: 0.8em;
+			margin-top: 10px;
+		}
+        .strike {
+  text-decoration: line-through;
+  }
+    .footer {
+      
+      position: fixed;
+      bottom:10px;
+    }
+
+	</style>
+  <div class="product-container">
+    <div class="product-box">
+      <img class="product-image"src="https://cdn.akakce.com/asus/asus-zenpower-slim-abtu015-4000-mah-tasinabilir-sarj-cihazi-z.jpg" alt="Ürün 1">
+      <div class="product-name">Asus Powerbank</div>
+      <p class="product-price">290 TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://cdn.vatanbilgisayar.com/Upload/PRODUCT/razer/thumb/TeoriV2-97519_large.jpg" alt="Ürün 2">
+      <div class="product-name">Razer Gaming Kulaklık</div>
+      <p class="product-price">1.200TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://cdn.dsmcdn.com/ty516/product/media/images/20220826/13/165989796/189618903/1/1_org_zoom.jpg" alt="Ürün 3">
+      <div class="product-name">Monster Gaming Laptop</div>
+      <p class="price">199.99 TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://m.media-amazon.com/images/I/61OJd5M+4nL._AC_UF1000,1000_QL80_.jpg" alt="Ürün 4">
+      <div class="product-name">Macbook Air 2020</div>
+      <p class="product-price">25.000TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MME73?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632861342000" alt="Ürün 5">
+      <div class="product-name">Apple AirPods 3.Nesil</div>
+      <p class="product-price">1.400TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://m.media-amazon.com/images/I/312Iw4DBonL._AC_UF1000,1000_QL80_.jpg" alt="Ürün 6">
+      <div class="product-name">İphone 14/13/12/11 Hızlı Şarj Adaptörü</div>
+      <p class="product-price">700TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://m.media-amazon.com/images/I/61VLL6Oj+wS.jpg" alt="Ürün 7">
+      <div class="product-name">Samsung Led Monitör</div>
+      <p class="product-price">920TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://ayb.akinoncdn.com/products/2023/03/29/143383/e9602468-826b-4ec6-b6a8-f616b08659a0.jpg" alt="Ürün 8">
+      <div class="product-name">Xiaomi Vacuum Robot Süpürge</div>
+      <p class="product-price">4.200TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://productimages.hepsiburada.net/s/39/375/10607327019058.jpg/format:webp" alt="Ürün 8">
+      <div class="product-name">Xiaomi Redmi Note 9 Pro</div>
+      <p class="product-price">6.400TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://www.apple.com/newsroom/images/product/watch/standard/Apple-watchOS-9-hero-220912_big.jpg.large.jpg" alt="Ürün 8">
+      <div class="product-name">Apple Watch 8</div>
+      <p class="product-price">9.100TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    <div class="product-box">
+      <img class="product-image"src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-model-unselect-gallery-2-202209_GEO_EMEA?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1660753617539" alt="Ürün 8">
+      <div class="product-name">iPhone 14 Pro</div>
+      <p class="product-price">44.000TL</p>
+      <button class="add-to-cart">Sepete Ekle</button>
+    </div>
+    
+    
+
+
+
+
+  </div>
+  
+
+
+  
+
+
+</main>
+</body>
+
+
+ <footer class="footer">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="forms.html">Bize Ulasin</a>
+    </p>
+    <p class="mb-1">E-Ticaretin Kalbi &copy; Haklarimiz saklidir.</p>
+    <p class="mb-0">EKİZ E-TİCARET <a href="index.html">Ana Sayfaya Don</a> Urunlere Don <a href="urun.html">Kalitenin Adresi.</a>.</p>
+  </div>
+</footer>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+<script>
+		// Burada JS ile ilgili her linke tıklandığında uyarı veren kod
+		var links = document.getElementsByTagName('a');
+		for (var i = 0; i < links.length; i++) {
+			links[i].onclick = function() {
+				alert('Sayfaya yönlendiriliyorsunuz: ' + this.getAttribute('href'));
+			}
+		}
+	</script>
+  </body>
+
+</html>
